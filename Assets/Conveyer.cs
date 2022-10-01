@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Conveyer : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Conveyer : MonoBehaviour
     Transform end;
 
     public static List<Conveyer> conveyers = new List<Conveyer>();
+
+    public List<GameObject> inside = new List<GameObject>();
 
     private void Awake()
     {
@@ -36,21 +39,35 @@ public class Conveyer : MonoBehaviour
         }
     }
 
-    public void AddBox(GameObject box, int position = -1)
+    public float GetPositionOfBox(int i)
     {
-        if (position == -1)
+        return Vector3.Distance(boxes[i].transform.position, start.position) / Vector3.Distance(end.transform.position, start.position);
+    }
+
+    public void AddBox(GameObject box)
+    {
+        bool added = false;
+
+        float dist = Vector3.Distance(box.transform.position, end.position);
+        for (int i = boxes.Count - 1; i >= 0; i--)
         {
-            boxes.Add(box);
+            if (dist > Vector3.Distance(boxes[i].transform.position, end.position))
+            {
+                boxes.Insert(i + 1, box);
+                added = true;
+                break;
+            }
         }
-        else
+
+        if (!added)
         {
-            boxes.Insert(position, box);
+            boxes.Insert(0, box);
         }
-        
+
         box.GetComponent<Rigidbody>().mass = 10000;
     }
 
-    public static void RemoveBox(GameObject box)
+    public static void RemoveBoxFromAllConveyers(GameObject box)
     {
         foreach (Conveyer conveyer in conveyers)
         {
@@ -63,27 +80,27 @@ public class Conveyer : MonoBehaviour
         }
     }
 
+    public static void CheckBoxAtAllConveyers(GameObject box)
+    {
+        foreach (Conveyer conveyer in conveyers)
+        {
+            if (conveyer.inside.Contains(box))
+            {
+                conveyer.AddBox(box);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Box" && !boxes.Contains(other.gameObject))
         {
-            bool added = false;
+            AddBox(other.gameObject);
+        }
 
-            float dist = Vector3.Distance(other.transform.position, end.position);
-            for (int i = boxes.Count - 1; i >= 0; i--)
-            {
-                if (dist > Vector3.Distance(boxes[i].transform.position, end.position))
-                {
-                    AddBox(other.gameObject, i + 1);
-                    added = true;
-                    break;
-                }
-            }
-
-            if (!added)
-            {
-                AddBox(other.gameObject, 0);
-            }
+        if (!inside.Contains(other.gameObject))
+        {
+            inside.Add(other.gameObject);
         }
     }
 
@@ -93,6 +110,12 @@ public class Conveyer : MonoBehaviour
         {
             boxes.Remove(other.gameObject);
         }
+
+        if (inside.Contains(other.gameObject))
+        {
+            inside.Remove(other.gameObject);
+        }
+        //print(other.gameObject.name);
     }
 
     /*

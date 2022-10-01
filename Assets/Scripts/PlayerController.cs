@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public int maxBoxes = 2;
 
+    public float boxThrowStrength = 50f;
+
     public static PlayerController instance;
 
     private void Awake()
