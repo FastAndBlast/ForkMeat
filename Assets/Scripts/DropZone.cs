@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DropZone : MonoBehaviour
 {
     public Vector2 size;
+
+    public string boxType;
 
     public List<GameObject> boxes = new List<GameObject>();
 
@@ -67,8 +70,15 @@ public class DropZone : MonoBehaviour
             //TODO: ADD REWARDS AND EFFECTS
             for (int i = 0; i < boxes.Count;)
             {
-                Destroy(boxes[i]);
-                boxes.RemoveAt(i);
+                if (boxes[i].name == boxType)
+                {
+                    Destroy(boxes[i]);
+                    boxes.RemoveAt(i);
+                }
+                else
+                {
+                    i++;
+                }
             }
             timeToRemove = maxTimeToRemove;
         }
