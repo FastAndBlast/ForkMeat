@@ -30,9 +30,9 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        Vector3 targetPosition = target.position + offset;
+        Vector3 targetPosition = target.position; // + offset;
         //Vector3 targetPosition = target.TransformVector(target.localPosition + offset);
-        targetPosition.y = originalY;
+        //targetPosition.y = originalY;
 
         float distance = Vector3.Distance(transform.position, targetPosition) / 2;
 

@@ -7,24 +7,34 @@ public class Forklift : MonoBehaviour
 {
     public List<GameObject> boxes = new List<GameObject>();
 
+    public BoxCollider col;
+
     Transform pivot;
 
     //string[] urlList = new string[2];
 
+    Vector3 centerOfMass;
+
+    public static Forklift instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         pivot = transform.Find("Pivot");
+
+        //centerOfMass = PlayerController.instance.GetComponent<Rigidbody>().centerOfMass;
+
+        //PlayerController.instance.GetComponent<Rigidbody>().centerOfMass = centerOfMass;
+
+        col.enabled = true;
     }
 
     private void Update()
     {
-        for (int i = 0; i < boxes.Count; i++)
-        {
-            boxes[i].transform.position = pivot.Find(i.ToString()).position;
-            boxes[i].transform.rotation = pivot.Find(i.ToString()).rotation;
-        }
-
-
         if (Input.GetButtonDown("DropAllBoxes"))
         {
             DropBoxes();
@@ -34,6 +44,19 @@ public class Forklift : MonoBehaviour
         {
             RemoveBox();
 			AudioManager.instance.Play("Putdown");
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            boxes[i].transform.position = pivot.Find(i.ToString()).position;
+            //boxes[i].GetComponent<Rigidbody>().MovePosition(pivot.Find(i.ToString()).position);
+            //boxes[i].GetComponent<Rigidbody>().AddForce((transform.position - boxes[i].transform.position) * 5f);
+
+            boxes[i].transform.rotation = pivot.Find(i.ToString()).rotation;
+            boxes[i].transform.Rotate(Vector3.right, -90);
         }
     }
 
@@ -106,6 +129,7 @@ public class Forklift : MonoBehaviour
         GameObject box = boxes[boxes.Count - 1];
         box.GetComponent<BoxCollider>().enabled = true;
         box.GetComponent<Rigidbody>().isKinematic = false;
+        //box.transform.SetParent(null, false);
 
         Vector3 randomForce = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(0, 1f)).normalized;
         box.GetComponent<Rigidbody>().mass = 0.1f;
@@ -131,13 +155,34 @@ public class Forklift : MonoBehaviour
         StartCoroutine(DisableCollider(2f));
     }
 
+    public void ExplodeBoxes()
+    {
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            RemoveBox();
+        }
+    }
+
     public IEnumerator DisableCollider(float time)
     {
-        GetComponent<BoxCollider>().enabled = false;
+        BoxCollider[] cols = GetComponents<BoxCollider>();
+        foreach (BoxCollider col in cols)
+        {
+            col.enabled = false;
+        }
+
+        //GetComponent<BoxCollider>().enabled = false;
 
         yield return new WaitForSeconds(time);
 
-        GetComponent<BoxCollider>().enabled = true;
+        //GetComponent<BoxCollider>().enabled = true;
+
+        foreach (BoxCollider col in cols)
+        {
+            col.enabled = true;
+        }
+
+        PlayerController.instance.GetComponent<Rigidbody>().centerOfMass = centerOfMass;
 
         yield break;
     }
