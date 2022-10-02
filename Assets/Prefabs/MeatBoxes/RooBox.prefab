@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2501970784321842225}
   - component: {fileID: 2295768735015897919}
   - component: {fileID: 7109059323521496197}
+  - component: {fileID: 6261378265890733960}
   m_Layer: 0
   m_Name: RooBox
   m_TagString: Box
@@ -115,3 +116,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008, y: 0.008, z: 0.008}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6261378265890733960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511121594067183546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ced6eaf4288d964fbb5f34202fd925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

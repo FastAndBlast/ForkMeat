@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2423049700052835951}
   - component: {fileID: 7607847592714839231}
   - component: {fileID: 3059618207449955691}
+  - component: {fileID: -6723379440623174568}
   m_Layer: 0
   m_Name: LambBox
   m_TagString: Box
@@ -115,3 +116,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008, y: 0.008, z: 0.008}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6723379440623174568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722442131684594207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ced6eaf4288d964fbb5f34202fd925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
