@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7562620466264376515}
   - component: {fileID: 5124525022711200037}
   - component: {fileID: 7873704819146838640}
+  - component: {fileID: -8397378704397503717}
+  - component: {fileID: 619545686472449407}
+  - component: {fileID: -380323263248363877}
   m_Layer: 0
   m_Name: ShelvesDouble
   m_TagString: Untagged
@@ -84,3 +87,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8397378704397503717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179289561826676469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039593324, y: 0.035808098, z: 0.001888192}
+  m_Center: {x: -0.017341971, y: -0.016965874, z: 0.03767797}
+--- !u!65 &619545686472449407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179289561826676469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039593324, y: 0.035808098, z: 0.0011938133}
+  m_Center: {x: -0.017341971, y: -0.016965874, z: 0.019968757}
+--- !u!65 &-380323263248363877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179289561826676469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039593324, y: 0.035808098, z: 0.002651696}
+  m_Center: {x: -0.017341971, y: -0.016965874, z: 0.0013260916}
