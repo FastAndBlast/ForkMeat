@@ -38,10 +38,12 @@ public class Forklift : MonoBehaviour
         if (Input.GetButtonDown("DropAllBoxes"))
         {
             DropBoxes();
+			AudioManager.instance.Play("Putdown");
         }
         if (Input.GetButtonDown("DropBox") && boxes.Count > 0)
         {
             RemoveBox();
+			AudioManager.instance.Play("Putdown");
         }
     }
 
@@ -71,6 +73,7 @@ public class Forklift : MonoBehaviour
                 if (boxes.Count < PlayerController.instance.maxBoxes && !boxes.Contains(box))
                 {
                     AddBox(box);
+					AudioManager.instance.Play("Pickup");
                 }
 
                 box = null;
