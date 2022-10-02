@@ -8,8 +8,14 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public static int money;
+    
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        money = 0;
     }
 }

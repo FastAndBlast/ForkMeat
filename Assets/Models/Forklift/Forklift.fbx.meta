@@ -3,7 +3,22 @@ guid: c0eb802e03c14c442a5bf14d5a9e0d67
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ForkLift
+    second: {fileID: 2100000, guid: 758dda2603d0f924f9dd37e4255f340b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ForkLiftMetal
+    second: {fileID: 2100000, guid: 43df04eec08e5c3409e383ac68140775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 00ca518fe2506934ab4c9e43e0233e4b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,0 +1,122 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DropZone : MonoBehaviour
+{
+    public Vector2 size;
+
+    public List<GameObject> boxes = new List<GameObject>();
+
+    public static List<DropZone> dropZones = new List<DropZone>();
+
+    public float timeToRemove = 30f;
+    float maxTimeToRemove;
+
+    private void Awake()
+    {
+        dropZones.Add(this);
+    }
+
+    private void Start()
+    {
+        maxTimeToRemove = timeToRemove;
+    }
+
+    public void AddBox(GameObject box)
+    {
+        Vector3 pos = box.transform.position;
+        pos = new Vector3(Mathf.Clamp(pos.x, transform.position.x + 0.5f, transform.position.x + size.x - 0.5f),
+                        pos.y,
+                        Mathf.Clamp(pos.z, transform.position.z + 0.5f, transform.position.z + size.y - 0.5f));
+
+        pos.x = pos.x - pos.x % 1 + 0.5f;
+
+        if (pos.x < 0)
+        {
+            pos.x -= 1;
+        }
+
+        pos.y = pos.y - pos.y % 0.8f + 0.5f;
+
+        pos.z = pos.z - pos.z % 1 + 0.5f;
+
+        if (pos.z < 0)
+        {
+            pos.z -= 1;
+        }
+
+        box.transform.position = pos;
+        box.transform.eulerAngles = Vector3.zero;
+        boxes.Add(box);
+    }
+
+    public void Update()
+    {
+        if (timeToRemove > 0)
+        {
+            timeToRemove -= Time.deltaTime;
+        }
+        else
+        {
+            //TODO: ADD REWARDS AND EFFECTS
+            for (int i = 0; i < boxes.Count;)
+            {
+                Destroy(boxes[i]);
+                boxes.RemoveAt(i);
+            }
+            timeToRemove = maxTimeToRemove;
+        }
+    }
+
+    public static void RemoveBoxFromAllDropZones(GameObject box)
+    {
+        foreach (DropZone dropZone in dropZones)
+        {
+            if (dropZone.boxes.Contains(box))
+            {
+                dropZone.boxes.Remove(box);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Box")
+        {
+            GameObject box = other.gameObject;
+
+            while (box != null)
+            {
+                AddBox(box);
+
+                Vector3 castPos = box.transform.position + Vector3.up * 0.8f;
+
+                box = null;
+
+                RaycastHit[] cast = Physics.BoxCastAll(castPos, new Vector3(1f, 0.2f, 1f), Vector3.up, Quaternion.Euler(0, 0, 0), 0.001f);
+
+                foreach (RaycastHit hit in cast)
+                {
+                    //print(hit.transform.name);
+                    if (hit.transform.tag == "Box" && !boxes.Contains(hit.transform.gameObject))
+                    {
+                        box = hit.transform.gameObject;
+                        break;
+                    }
+                }
+                castPos.y += 0.8f;
+            }
+        }
+    }
+
+    /*
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Box" && boxes.Contains(other.gameObject))
+        {
+            boxes.Remove(other.gameObject);
+        }
+    }
+    */
+}
