@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     public float boostSpeed;
     public float boostCooldown;
     float boostCooldownTime;
+	float revUpCooldown;
+	float revDownCooldown;
+	float idleCooldown;
+	float revCooldown;
 
     public static PlayerController instance;
 
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+		revDownCooldown = 0.75f;
     }
 
     // Update is called once per frame
@@ -70,9 +75,63 @@ public class PlayerController : MonoBehaviour
                 boostCooldownTime = boostCooldown;
             }
         }
+
+		if (Input.GetButtonDown("Vertical")) {
+			AudioManager.instance.Stop("EngineIdle");
+			AudioManager.instance.Stop("EngineTransDown");
+			AudioManager.instance.Play("EngineTransUp", 0.2f);
+			revUpCooldown = 2.5f;
+			revDownCooldown = 0f;
+			revCooldown = 0f;
+			idleCooldown = 0f;
+		}
+		if (Input.GetButtonUp("Vertical")) {
+			AudioManager.instance.Stop("EngineRev");
+			AudioManager.instance.Stop("EngineTransUp");
+			AudioManager.instance.Play("EngineTransDown", 0.2f);
+			revDownCooldown = 2.95f;
+			revUpCooldown = 0f;
+			revCooldown = 0f;
+			idleCooldown = 0f;
+		}
+
+
+		if (revDownCooldown > 0)
+		{
+			revDownCooldown -= Time.deltaTime;
+			
+			if (revDownCooldown <= 0) 
+			{
+				AudioManager.instance.Play("EngineIdle", 0.2f);
+				idleCooldown = 6.5f;
+			}
+		}
+		if (revUpCooldown > 0)
+		{
+			revUpCooldown -= Time.deltaTime;
+			if (revUpCooldown <= 0) 
+			{
+				AudioManager.instance.Play("EngineRev", 0.2f);
+				revCooldown = 3.5f;
+			}
+		}
+		if (revCooldown > 0)
+		{
+			revCooldown -= Time.deltaTime;
+			if (revCooldown <= 0) 
+			{
+				AudioManager.instance.Play("EngineRev", 0.2f);
+				revCooldown = 3.5f;
+			}
+		}
+		if (idleCooldown > 0)
+		{
+			idleCooldown -= Time.deltaTime;
+			if (idleCooldown <= 0) 
+			{
+				AudioManager.instance.Play("EngineIdle", 0.2f);
+				idleCooldown = 6.5f;
+			}
+		}
     }
-
-
-
-
 }
