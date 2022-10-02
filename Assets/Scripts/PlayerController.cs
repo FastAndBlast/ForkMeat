@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public float boxThrowStrength = 50f;
 
+    public float downForce = 1000f;
+
     [Header("Boost")]
     public bool boostEnabled;
     public float boostSpeed;
@@ -42,6 +44,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        rb.AddForceAtPosition(Vector3.down * downForce, rb.worldCenterOfMass);
+
+        //Vector3 vel = rb.velocity;
+        //rb.velocity = Vector3.zero;
+        
+        //rb.velocity = vel;
+
         if (boostDuration > 0)
         {
             if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 0.25f)
@@ -56,7 +65,9 @@ public class PlayerController : MonoBehaviour
             float vertical = Input.GetAxisRaw("Vertical");
             float horizontal = Input.GetAxisRaw("Horizontal");
 
-            rb.AddForce(transform.forward * vertical * speed * Time.fixedDeltaTime * GameManager.timeScale);
+            Vector3 forwardVector = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+
+            rb.AddForce(forwardVector * vertical * speed * Time.fixedDeltaTime * GameManager.timeScale);
             //rb.MoveRotation(transform.rotation * deltaRotation);
 
             //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
@@ -65,17 +76,31 @@ public class PlayerController : MonoBehaviour
             // Physics based
             if (vertical < 0)
             {
-                Quaternion deltaRotation = Quaternion.Euler(Vector3.up * -horizontal * turnSpeed * Time.fixedDeltaTime);
-                rb.MoveRotation(transform.rotation * deltaRotation);
+                //rb.AddTorque(transform.up * -horizontal * turnSpeed * Time.deltaTime * GameManager.timeScale);
+                //Quaternion deltaRotation = Quaternion.Euler(Vector3.up * -horizontal * turnSpeed * Time.fixedDeltaTime);
+                //rb.MoveRotation(transform.rotation * deltaRotation);
+                transform.eulerAngles += Vector3.up * -horizontal;
+
             }
             else if (vertical > 0)
             {
                 //rb.AddTorque(transform.up * horizontal * turnSpeed * Time.deltaTime * GameManager.timeScale);
                 //rb.AddTorque(transform.right * horizontal * turnSpeed * Time.deltaTime * GameManager.timeScale);
-                Quaternion deltaRotation = Quaternion.Euler(Vector3.up * horizontal * turnSpeed * Time.fixedDeltaTime);
-                rb.MoveRotation(transform.rotation * deltaRotation);
+                //Quaternion deltaRotation = Quaternion.Euler(Vector3.up * horizontal * turnSpeed * Time.fixedDeltaTime);
+                //rb.MoveRotation(transform.rotation * deltaRotation);
+                transform.eulerAngles += Vector3.up * horizontal;
             }
         }
+
+        //rb.constraints = RigidbodyConstraints.None;
+        //rb.MoveRotation(Quaternion.Euler(0, transform.eulerAngles.y, 0));
+        //rb.constraints = (int)RigidbodyConstraints.FreezeRotationX + RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    private void LateUpdate()
+    {
+        transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 
     private void Update()
