@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
 
     public float boxThrowStrength = 50f;
 
+    [Header("Boost")]
+    public bool boostEnabled;
+    public float boostSpeed;
+    public float boostCooldown;
+    float boostCooldownTime;
+
     public static PlayerController instance;
 
     private void Awake()
@@ -50,8 +56,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (boostEnabled)
+        {
+            if (boostCooldownTime > 0)
+            {
+                boostCooldownTime -= Time.deltaTime;
+            }
+            else if (Input.GetButtonDown("Boost"))
+            {
+                rb.AddForce(transform.forward * boostSpeed);
+                boostCooldownTime = boostCooldown;
+            }
+        }
+    }
 
 
 
-    
+
 }

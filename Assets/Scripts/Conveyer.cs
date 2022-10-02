@@ -75,7 +75,6 @@ public class Conveyer : MonoBehaviour
             {
                 conveyer.boxes.Remove(box);
                 box.GetComponent<Rigidbody>().mass = 10;
-                break;
             }
         }
     }
@@ -93,6 +92,7 @@ public class Conveyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //print("ENTER: " + other.name);
         if (other.tag == "Box" && !boxes.Contains(other.gameObject))
         {
             AddBox(other.gameObject);
@@ -106,6 +106,7 @@ public class Conveyer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //print("XITED: " + other.name);
         if (other.tag == "Box" && boxes.Contains(other.gameObject))
         {
             boxes.Remove(other.gameObject);

@@ -95,6 +95,7 @@ public class Forklift : MonoBehaviour
         //box.transform.SetParent(pivot.Find(boxes.Count.ToString()), false);
         //box.transform.localPosition = Vector3.zero;
         Conveyer.RemoveBoxFromAllConveyers(box);
+        DropZone.RemoveBoxFromAllDropZones(box);
     }
 
     public void RemoveBox()
