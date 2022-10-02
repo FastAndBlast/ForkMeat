@@ -74,6 +74,7 @@ public class Conveyer : MonoBehaviour
             if (conveyer.boxes.Contains(box))
             {
                 conveyer.boxes.Remove(box);
+                conveyer.inside.Remove(box);
                 box.GetComponent<Rigidbody>().mass = 10;
             }
         }

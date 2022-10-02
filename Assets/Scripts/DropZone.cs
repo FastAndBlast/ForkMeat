@@ -46,8 +46,13 @@ public class DropZone : MonoBehaviour
             pos.z -= 1;
         }
 
+        Vector3 rot = box.transform.eulerAngles;
+        rot.x = rot.x - rot.x % 90;
+        rot.y = rot.y - rot.y % 90;
+        rot.z = rot.z - rot.z % 90;
+
         box.transform.position = pos;
-        box.transform.eulerAngles = Vector3.zero;
+        box.transform.eulerAngles = rot;
         boxes.Add(box);
     }
 
