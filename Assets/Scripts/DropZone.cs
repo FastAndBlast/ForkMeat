@@ -117,9 +117,10 @@ public class DropZone : MonoBehaviour
             timeToRemove = maxTimeToRemove;
         }
         */
-        StartCoroutine(CheckForNulls());
+        //StartCoroutine(CheckForNulls());
     }
 
+    /*
     public IEnumerator CheckForNulls()
     {
         while (true)
@@ -135,6 +136,7 @@ public class DropZone : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+    */
 
     public void RemoveCorrectBox()
     {
@@ -240,6 +242,16 @@ public class DropZone : MonoBehaviour
         {
             inside.Remove(box);
         }
+
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            if (boxes[i] == null)
+            {
+                boxes.RemoveAt(i);
+                i--;
+            }
+        }
+
         yield break;
     }
 
