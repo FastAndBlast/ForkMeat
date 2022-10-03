@@ -119,7 +119,7 @@ public class ShopUI : MonoBehaviour
         string result = Shop.instance.UpgradeBoost();
         if (result != "")
         {
-            speed.Find("Description").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = result;
+            boost.Find("Description").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = result;
         }
         UpdateValues();
     }
