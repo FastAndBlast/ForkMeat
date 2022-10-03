@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             {
                 Forklift.instance.ExplodeBoxes();
             }
-            rb.AddForce(transform.forward * boostSpeed * Time.fixedDeltaTime * GameManager.timeScale);
+            rb.AddForce(transform.forward * speed * 3 * Time.fixedDeltaTime * GameManager.timeScale);
             boostDuration -= Time.deltaTime;
         }
         else
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 //rb.AddTorque(transform.up * -horizontal * turnSpeed * Time.deltaTime * GameManager.timeScale);
                 //Quaternion deltaRotation = Quaternion.Euler(Vector3.up * -horizontal * turnSpeed * Time.fixedDeltaTime);
                 //rb.MoveRotation(transform.rotation * deltaRotation);
-                transform.eulerAngles += Vector3.up * -horizontal;
+                transform.eulerAngles += Vector3.up * -horizontal * turnSpeed;
 
             }
             else if (vertical > 0)
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 //rb.AddTorque(transform.right * horizontal * turnSpeed * Time.deltaTime * GameManager.timeScale);
                 //Quaternion deltaRotation = Quaternion.Euler(Vector3.up * horizontal * turnSpeed * Time.fixedDeltaTime);
                 //rb.MoveRotation(transform.rotation * deltaRotation);
-                transform.eulerAngles += Vector3.up * horizontal;
+                transform.eulerAngles += Vector3.up * horizontal * turnSpeed;
             }
         }
 

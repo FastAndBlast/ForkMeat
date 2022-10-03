@@ -21,6 +21,7 @@ public class Shop : MonoBehaviour
     public int mapCost = 10;
 
     public float speedUpgrade = 50000;
+    public float turnUpgrade = 12.5f;
     public float boostUpgrade = 1f;
 
     private void Awake()
@@ -79,6 +80,7 @@ public class Shop : MonoBehaviour
         if (money >= speedCost)
         {
             PlayerController.instance.speed += speedUpgrade;
+            PlayerController.instance.turnSpeed += turnUpgrade;
             money -= speedCost;
         }
     }
