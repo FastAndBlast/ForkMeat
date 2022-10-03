@@ -44,6 +44,15 @@ public class OrderManager : MonoBehaviour
     [HideInInspector]
     public Queue<int> boxPrioQueue = new Queue<int>();
 
+    // 2 orders -> -5s (25)
+    // 2 orders -> -5s (20)
+    // 2 orders -> -5s (15)
+
+    public float orderCooldownReduction = 5f;
+
+    [HideInInspector]
+    public int orderCount = 0;
+
     private void Awake()
     {
         instance = this;
@@ -221,6 +230,13 @@ public class OrderManager : MonoBehaviour
         }
         else
         {
+            orderCount++;
+            if (orderCount == 2)
+            {
+                orderCooldown = Mathf.Max(15, orderCooldown - orderCooldownReduction);
+                orderCount = 0;
+            }
+
             orders.Add(newOrder);
             existingOrders.Add(newOrder.boxType);
             AudioManager.instance.Play("Whistle", 0.1f);
