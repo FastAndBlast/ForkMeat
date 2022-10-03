@@ -23,6 +23,7 @@ public class CrateUI : MonoBehaviour
 
     private void Start()
     {
+        dict = new Dictionary<string, Sprite>();
         for (int i = 0; i < crateNames.Count; i++)
         {
             dict.Add(crateNames[i], crateSprites[i]);

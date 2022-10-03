@@ -12,7 +12,7 @@ public class Order
     public int amount;
     public float time;
     public float timeMax;
-
+    public bool audioDone = false;
     public Order(float time)
     {
         this.time = time;
@@ -33,7 +33,7 @@ public class OrderManager : MonoBehaviour
     public static OrderManager instance;
 
     public float orderCooldown = 30f;
-    float orderCooldownTime = 0;
+    float orderCooldownTime = 4;
 
     List<string> existingOrders = new List<string>();
 
@@ -80,6 +80,12 @@ public class OrderManager : MonoBehaviour
             }
 
             orders[i].time -= Time.deltaTime;
+            if (orders[i].time / orders[i].timeMax < 0.2f && !orders[i].audioDone)
+            {
+                AudioManager.instance.Play("HurryUp", 0.8f);
+                orders[i].audioDone = true;
+            }
+
             if (orders[i].time <= 0)
             {
                 GameManager.instance.EndGame();
@@ -120,6 +126,7 @@ public class OrderManager : MonoBehaviour
         {
             boxAmounts[order.boxType].Pop().RemoveCorrectBox();
         }
+        AudioManager.instance.Play("OrderUp");
     }
 
     public void RemoveBox(string boxType, DropZone dropZone)
@@ -156,7 +163,7 @@ public class OrderManager : MonoBehaviour
             return;
         }
 
-        Order newOrder = new Order(60);
+        Order newOrder = new Order(20);
         
         int boxIndex = 0;
 
@@ -198,6 +205,7 @@ public class OrderManager : MonoBehaviour
         {
             orders.Add(newOrder);
             existingOrders.Add(newOrder.boxType);
+            AudioManager.instance.Play("Whistle", 0.1f);
         }
     }
 }

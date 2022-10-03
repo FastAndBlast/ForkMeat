@@ -40,11 +40,20 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        highScore = Mathf.Max(highScore, score);
-        EndScreenManager.instance.gameObject.SetActive(true);
-        EndScreenManager.instance.UpdateValues();
-        Camera.main.gameObject.SetActive(false);
-        driftCamera.SetActive(true);
-        gameOver = true;
+        if (!gameOver)
+        {
+            highScore = Mathf.Max(highScore, score);
+            EndScreenManager.instance.gameObject.SetActive(true);
+            EndScreenManager.instance.UpdateValues();
+            Camera.main.gameObject.SetActive(false);
+            driftCamera.SetActive(true);
+            gameOver = true;
+            AudioManager.instance.Play("EngineOff", 0.2f);
+            AudioManager.instance.Stop("EngineIdle");
+            AudioManager.instance.Stop("EngineRev");
+            AudioManager.instance.Stop("EngineTransUp");
+            AudioManager.instance.Stop("EngineTransDown");
+            AudioManager.instance.Stop("Boost");
+        }
     }
 }
