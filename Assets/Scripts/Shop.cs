@@ -77,11 +77,13 @@ public class Shop : MonoBehaviour
         {
             //ShopUI.instance.gameObject.SetActive(true);
             ShopUI.instance.UpdateValues();
+            Time.timeScale = 0;
         }
         else
         {
             //ShopUI.instance.gameObject.SetActive(false);
             ShopUI.instance.CloseShop();
+            Time.timeScale = 1;
         }
     }
 

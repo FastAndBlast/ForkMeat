@@ -17,6 +17,8 @@ public class Forklift : MonoBehaviour
 
     public static Forklift instance;
 
+    public GameObject poofParticles;
+
     private void Awake()
     {
         instance = this;
@@ -117,6 +119,8 @@ public class Forklift : MonoBehaviour
         box.GetComponent<BoxCollider>().enabled = false;
         box.GetComponent<Rigidbody>().isKinematic = true;
         box.tag = "MovingBox";
+        GameObject particles = Instantiate(poofParticles);
+        particles.transform.position = box.transform.position;
         box.transform.position = pivot.Find((boxes.Count - 1).ToString()).position;
         //box.transform.SetParent(pivot.Find(boxes.Count.ToString()), false);
         //box.transform.localPosition = Vector3.zero;

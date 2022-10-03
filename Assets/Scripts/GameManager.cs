@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static float timeScale = 1.0f;
 
+    public bool paused = false;
+
     public static GameManager instance;
 
     public float score = 0;

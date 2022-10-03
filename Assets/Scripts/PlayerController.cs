@@ -18,14 +18,17 @@ public class PlayerController : MonoBehaviour
     public float boostSpeed;
     public float boostCooldown;
     public float boostDurationMax;
+    [HideInInspector]
+    public float boostCooldownTime;
 
     [Header("Don't Touch")]
     public int maxBoxes = 2;
     public float downForce = 1000f;
     public Rigidbody rb;
+    public GameObject boostCollisionParticles;
+    public ParticleSystem boostTrailParticles;
 
     // SFX stuff
-    float boostCooldownTime;
     float revUpCooldown;
     float revDownCooldown;
     float idleCooldown;
@@ -35,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public float boostDuration = 0f;
 
     public static PlayerController instance;
+
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -76,6 +81,8 @@ public class PlayerController : MonoBehaviour
             if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 2f)
             {
                 Forklift.instance.ExplodeBoxes();
+                GameObject particles = Instantiate(boostCollisionParticles);
+                particles.transform.position = transform.position + Vector3.up * 3f;
             }
             rb.AddForce(transform.forward * speed * 100000 * 3 * Time.fixedDeltaTime * GameManager.timeScale);
             boostDuration -= Time.deltaTime;
@@ -110,6 +117,7 @@ public class PlayerController : MonoBehaviour
                 //rb.MoveRotation(transform.rotation * deltaRotation);
                 transform.eulerAngles += Vector3.up * horizontal * turnSpeed;
             }
+            boostTrailParticles.Stop();
         }
 
         //rb.constraints = RigidbodyConstraints.None;
@@ -138,6 +146,7 @@ public class PlayerController : MonoBehaviour
 				AudioManager.instance.Play("Boost", 0.2f);
                 boostDuration = boostDurationMax;
                 boostCooldownTime = boostCooldown;
+                boostTrailParticles.Play();
             }
         }
 
