@@ -9109,7 +9109,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8817b103201192e4fa2d690667335a71,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.01
+      value: -23.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8817b103201192e4fa2d690667335a71,
         type: 3}
@@ -42835,7 +42835,7 @@ MonoBehaviour:
   weights: 0f0000000a0000000a000000070000000500000003000000
   weightSum: 0
   targetConveyer: {fileID: 96636753}
-  firstFewBoxes: 00102012003021031024
+  firstFewBoxes: 
   availableBoxTypes: 1
   boxNum: 1
 --- !u!4 &1398479571
@@ -46543,9 +46543,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstFewOrders: 
   orderCooldown: 30
-  orderLength: 60
+  orderLength: 65
   canvasTransform: {fileID: 229901240}
   orderCooldownReduction: 5
+  minimumOrderCooldown: 15
+  ordersBeforeCooldownReduction: 2
   orderCount: 0
 --- !u!4 &1508988356
 Transform:
