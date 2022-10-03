@@ -142,13 +142,13 @@ public class DropZone : MonoBehaviour
     {
         for (int i = 0; i < boxes.Count; i++)
         {
+            if (!boxes[i])
+            {
+                continue;
+            }
             if (boxes[i].name == boxType && !removeNextFrame.Contains(boxes[i]))
             {
                 GameObject box = boxes[i];
-                if (!box)
-                {
-                    continue;
-                }
                 GameManager.instance.score += BoxManager.instance.valueDict[box.name];
                 Shop.instance.money += BoxManager.instance.valueDict[box.name];
 
