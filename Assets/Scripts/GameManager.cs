@@ -9,7 +9,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float score = 0;
-    
+
+    public static bool gameOver = false;
+
+    public GameObject driftCamera;
+
+    private void Start()
+    {
+        gameOver = false;
+    }
+
     public float highScore
     {
         get
@@ -32,5 +41,8 @@ public class GameManager : MonoBehaviour
         highScore = Mathf.Max(highScore, score);
         EndScreenManager.instance.gameObject.SetActive(true);
         EndScreenManager.instance.UpdateValues();
+        Camera.main.gameObject.SetActive(false);
+        driftCamera.SetActive(true);
+        gameOver = true;
     }
 }

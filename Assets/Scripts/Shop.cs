@@ -13,16 +13,34 @@ public class Shop : MonoBehaviour
 
     public static Shop instance;
 
-    public static int money = 100;
+    public int money = 100;
 
+    [Header("Capacity Upgrade")]
     public int capacityCost = 7;
-    public int speedCost = 3;
-    public int boostCost = 6;
-    public int mapCost = 10;
+    public int capacityCostIncrease = 7;
 
-    public float speedUpgrade = 50000;
+    [Header("Speed Upgrade")]
+    public int speedCost = 3;
+    public int speedCostIncrease = 3;
+    public float speedUpgrade = 0.5f;
     public float turnUpgrade = 12.5f;
+
+    [Header("Boost Upgrade")]
+    public int boostCost = 6;
+    public int boostCostIncrease = 6;
     public float boostUpgrade = 1f;
+
+    [Header("Map Upgrade")]
+    public int mapCost = 10;
+    public int mapCostIncrease = 10;
+
+
+
+
+
+    
+    
+    
 
     private void Awake()
     {
@@ -56,12 +74,12 @@ public class Shop : MonoBehaviour
         open = !open;
         if (open)
         {
-            ShopUI.instance.gameObject.SetActive(true);
+            //ShopUI.instance.gameObject.SetActive(true);
             ShopUI.instance.UpdateValues();
         }
         else
         {
-            ShopUI.instance.gameObject.SetActive(false);
+            //ShopUI.instance.gameObject.SetActive(false);
             ShopUI.instance.CloseShop();
         }
     }
@@ -72,6 +90,7 @@ public class Shop : MonoBehaviour
         {
             PlayerController.instance.UpgradeBoxMax();
             money -= capacityCost;
+            capacityCost += capacityCostIncrease;
         }
     }
 
@@ -82,6 +101,7 @@ public class Shop : MonoBehaviour
             PlayerController.instance.speed += speedUpgrade;
             PlayerController.instance.turnSpeed += turnUpgrade;
             money -= speedCost;
+            speedCost += speedCostIncrease;
         }
     }
 
@@ -98,6 +118,7 @@ public class Shop : MonoBehaviour
                 PlayerController.instance.boostEnabled = true;
             }
             money -= boostCost;
+            boostCost += boostCostIncrease;
         }
     }
 
@@ -106,6 +127,8 @@ public class Shop : MonoBehaviour
         if (money >= mapCost)
         {
             money -= mapCost;
+            mapCost += mapCostIncrease;
+            MapUpgradeManager.instance.Upgrade();
         }
     }
 }

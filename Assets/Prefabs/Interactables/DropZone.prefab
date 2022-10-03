@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2, y: 2}
-  boxType: Chicken
+  boxType: ChickenBox
   boxes: []
   timeToRemove: 30
 --- !u!65 &6233212841353616736

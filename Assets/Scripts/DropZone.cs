@@ -16,6 +16,10 @@ public class DropZone : MonoBehaviour
     public float timeToRemove = 30f;
     float maxTimeToRemove;
 
+    //static List<int> boxValues = new List<int>();
+
+    //Dictionary<>
+
     private void Awake()
     {
         dropZones.Add(this);
@@ -30,27 +34,26 @@ public class DropZone : MonoBehaviour
     {
         
         Vector3 pos = box.transform.position;
-        print(pos);
         pos = new Vector3(Mathf.Clamp(pos.x, transform.position.x + 0.5f, transform.position.x + size.x - 0.5f),
                         pos.y,
                         Mathf.Clamp(pos.z, transform.position.z + 0.5f, transform.position.z + size.y - 0.5f));
-        print(pos);
-        pos.x = pos.x - pos.x % 1 + 0.5f;
+
         if (pos.x < 0)
         {
             pos.x -= 1;
         }
 
-        pos.y = pos.y - pos.y % 0.8f + 0.5f;
-
-        pos.z = pos.z - pos.z % 1 + 0.5f;
-
+        pos.x = pos.x - pos.x % 1 + 0.5f;
+        
+        
         if (pos.z < 0)
         {
             pos.z -= 1;
         }
 
-        print(pos);
+        pos.y = pos.y - pos.y % 1f + 0.5f;
+
+        pos.z = pos.z - pos.z % 1 + 0.5f;
 
         Vector3 rot = box.transform.eulerAngles;
         rot.x = rot.x - rot.x % 90;
@@ -75,6 +78,8 @@ public class DropZone : MonoBehaviour
             {
                 if (boxes[i].name == boxType)
                 {
+                    GameManager.instance.score += BoxManager.instance.valueDict[boxes[i].name];
+                    Shop.instance.money += BoxManager.instance.valueDict[boxes[i].name];
                     Destroy(boxes[i]);
                     boxes.RemoveAt(i);
                 }
