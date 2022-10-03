@@ -188,8 +188,6 @@ public class OrderManager : MonoBehaviour
             //GameManager.instance.EndGame();
             return;
         }
-
-        Order newOrder = new Order(orderLength);
         
         int boxIndex = 0;
 
@@ -221,6 +219,22 @@ public class OrderManager : MonoBehaviour
             }
             firstRun = false;
         }
+
+        float len = orderLength;
+        if (boxIndex == 1 || (boxIndex == 2))
+        {
+            len += 10;
+        }
+        if (boxIndex == 3 || (boxIndex == 4))
+        {
+            len += 30;
+        }
+        else if (boxIndex == 5)
+        {
+            len += 60;
+        }
+
+        Order newOrder = new Order(len);
 
         boxIndex = Mathf.Clamp(boxIndex, 0, BoxManager.instance.weights.Length - 1);
 
