@@ -28,13 +28,14 @@ public class DropZone : MonoBehaviour
 
     public void AddBox(GameObject box)
     {
+        
         Vector3 pos = box.transform.position;
+        print(pos);
         pos = new Vector3(Mathf.Clamp(pos.x, transform.position.x + 0.5f, transform.position.x + size.x - 0.5f),
                         pos.y,
                         Mathf.Clamp(pos.z, transform.position.z + 0.5f, transform.position.z + size.y - 0.5f));
-
+        print(pos);
         pos.x = pos.x - pos.x % 1 + 0.5f;
-
         if (pos.x < 0)
         {
             pos.x -= 1;
@@ -48,6 +49,8 @@ public class DropZone : MonoBehaviour
         {
             pos.z -= 1;
         }
+
+        print(pos);
 
         Vector3 rot = box.transform.eulerAngles;
         rot.x = rot.x - rot.x % 90;
@@ -97,7 +100,7 @@ public class DropZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Box")
+        if (other.tag == "Box" && !boxes.Contains(other.gameObject))
         {
             GameObject box = other.gameObject;
 
