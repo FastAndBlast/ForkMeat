@@ -41,7 +41,6 @@ public class AudioManager : MonoBehaviour
 	void Start()
     {
         Play("Song", 0.1f);
-		Play("EngineStart", 0.2f);
       
     }
 
