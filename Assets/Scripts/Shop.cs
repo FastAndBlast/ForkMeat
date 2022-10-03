@@ -128,7 +128,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void UpgradeBoost()
+    public string UpgradeBoost()
     {
         if (money >= boostCost)
         {
@@ -148,10 +148,13 @@ public class Shop : MonoBehaviour
                 ShopUI.instance.RemoveShopOption("Boost");
             }
             AudioManager.instance.Play("Kaching", 0.5f);
+
+            return "Reduce Boost cooldown by 1s";
         }
+        return "";
     }
 
-    public void UpgradeMap()
+    public string UpgradeMap()
     {
         if (money >= mapCost)
         {
@@ -168,6 +171,9 @@ public class Shop : MonoBehaviour
                 MapUpgradeManager.instance.Upgrade();
             }
 			AudioManager.instance.Play("Kaching", 0.5f);
+
+            return "Extra Box every 10s";
         }
+        return "";
     }
 }
