@@ -50,6 +50,10 @@ public class OrderManager : MonoBehaviour
 
     public float orderCooldownReduction = 5f;
 
+    public float minimumOrderCooldown = 15f;
+
+    public int ordersBeforeCooldownReduction = 2;
+
     [HideInInspector]
     public int orderCount = 0;
 
@@ -231,9 +235,9 @@ public class OrderManager : MonoBehaviour
         else
         {
             orderCount++;
-            if (orderCount == 2)
+            if (orderCount == ordersBeforeCooldownReduction)
             {
-                orderCooldown = Mathf.Max(15, orderCooldown - orderCooldownReduction);
+                orderCooldown = Mathf.Max(minimumOrderCooldown, orderCooldown - orderCooldownReduction);
                 orderCount = 0;
             }
 
