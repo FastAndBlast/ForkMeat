@@ -44,6 +44,13 @@ public class AudioManager : MonoBehaviour
       
     }
 
+	public void SendHelp() 
+	{
+		Sound s = Array.Find(sounds, sound => sound.name == "Click");
+		s.source.time = s.startTime;
+        s.source.Play();
+	}
+
     public void Play(string name, float volume=1, float pitch=1)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

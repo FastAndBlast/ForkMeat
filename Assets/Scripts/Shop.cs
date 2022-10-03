@@ -62,6 +62,7 @@ public class Shop : MonoBehaviour
             if (Input.GetButtonDown("OpenShop"))
             {
                 OpenShop();
+				AudioManager.instance.Play("Rachet");
             }
             canvas.SetActive(true);
         }
@@ -93,6 +94,7 @@ public class Shop : MonoBehaviour
             PlayerController.instance.UpgradeBoxMax();
             money -= capacityCost;
             capacityCost += capacityCostIncrease;
+			AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -104,6 +106,7 @@ public class Shop : MonoBehaviour
             PlayerController.instance.turnSpeed += turnUpgrade;
             money -= speedCost;
             speedCost += speedCostIncrease;
+			AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -121,6 +124,7 @@ public class Shop : MonoBehaviour
             }
             money -= boostCost;
             boostCost += boostCostIncrease;
+			AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -131,6 +135,7 @@ public class Shop : MonoBehaviour
             money -= mapCost;
             mapCost += mapCostIncrease;
             MapUpgradeManager.instance.Upgrade();
+			AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 }
