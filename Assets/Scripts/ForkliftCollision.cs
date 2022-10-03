@@ -20,11 +20,12 @@ public class ForkliftCollision : MonoBehaviour
 		if (collision.gameObject.tag == "Metal") 
 		{
 			int rInt = Random.Range(1, 5);	
-			AudioManager.instance.Play("MetalHit" + rInt.ToString(), Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 60);
+			AudioManager.instance.Play("MetalHit" + rInt.ToString(), Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 150);
+			
 		}
 		if (collision.gameObject.tag == "Wood")
 		{
-			AudioManager.instance.Play("WoodHit", Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 60);
+			AudioManager.instance.Play("WoodHit", Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 150);
 		}
 	}
 }
