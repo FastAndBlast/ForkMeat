@@ -145,6 +145,10 @@ public class DropZone : MonoBehaviour
             if (boxes[i].name == boxType && !removeNextFrame.Contains(boxes[i]))
             {
                 GameObject box = boxes[i];
+                if (!box)
+                {
+                    continue;
+                }
                 GameManager.instance.score += BoxManager.instance.valueDict[box.name];
                 Shop.instance.money += BoxManager.instance.valueDict[box.name];
 
