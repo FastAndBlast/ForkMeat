@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ShopUI : MonoBehaviour
 {
@@ -13,6 +15,11 @@ public class ShopUI : MonoBehaviour
     Transform map;
 
     public TextMeshProUGUI moneyText;
+
+    public bool speedRemoved;
+    public bool carryCapacityRemoved;
+    public bool boostRemoved;
+    public bool mapRemoved;
 
     private void Awake()
     {
@@ -31,14 +38,60 @@ public class ShopUI : MonoBehaviour
 
     public void UpdateValues()
     {
-        carryCapacity.gameObject.SetActive(true);
-        speed.gameObject.SetActive(true);
-        boost.gameObject.SetActive(true);
-        map.gameObject.SetActive(true);
-        carryCapacity.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.capacityCost.ToString();
-        speed.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.speedCost.ToString();
-        boost.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.boostCost.ToString();
-        map.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.mapCost.ToString();
+        RectTransform rect = GetComponent<RectTransform>();
+
+        int ySize = 0;
+
+        if (!carryCapacityRemoved)
+        {
+            carryCapacity.gameObject.SetActive(true);
+            carryCapacity.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.capacityCost.ToString();
+            ySize++;
+        }
+        if (!speedRemoved)
+        {
+            speed.gameObject.SetActive(true);
+            speed.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.speedCost.ToString();
+            ySize++;
+        }
+        if (!boostRemoved)
+        {
+            boost.gameObject.SetActive(true);
+            boost.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.boostCost.ToString();
+            ySize++;
+        }
+        if (!mapRemoved)
+        {
+            map.gameObject.SetActive(true);
+            map.Find("ProductCost").Find("CostText").GetComponent<TextMeshProUGUI>().text = "$" + Shop.instance.mapCost.ToString();
+            ySize++;
+        }
+
+        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 195 * ySize);
+    }
+
+    public void RemoveShopOption(string option)
+    {
+        if (option == "CarryCapacity")
+        {
+            carryCapacity.gameObject.SetActive(false);
+            carryCapacityRemoved = true;
+        }
+        if (option == "Speed")
+        {
+            speed.gameObject.SetActive(false);
+            speedRemoved = true;
+        }
+        if (option == "Boost")
+        {
+            boost.gameObject.SetActive(false);
+            boostRemoved = true;
+        }
+        if (option == "Map")
+        {
+            map.gameObject.SetActive(false);
+            mapRemoved = true;
+        }
     }
 
     public void CloseShop()

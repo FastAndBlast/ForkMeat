@@ -13,13 +13,13 @@ public class EndScreenManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void UpdateValues()
     {
-        transform.Find("Score").GetComponent<TextMeshProUGUI>().text = "Score: " + GameManager.instance.score;
-        transform.Find("HighScore").GetComponent<TextMeshProUGUI>().text = "HighScore: " + GameManager.instance.highScore;
+        transform.GetChild(0).Find("Score").GetComponent<TextMeshProUGUI>().text = "Score: " + GameManager.instance.score;
+        transform.GetChild(0).Find("HighScore").GetComponent<TextMeshProUGUI>().text = "HighScore: " + GameManager.instance.highScore;
     }
 
     public void Restart()

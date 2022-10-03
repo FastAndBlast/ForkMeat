@@ -22,9 +22,9 @@ public class BoxManager : MonoBehaviour
     [HideInInspector]
     public int weightSum = 0;
 
-    //int boxNum = 1;
+    private int[] savedWeights = new int[6] { 0, 0, 0, 0, 0, 0 };
 
-    float startTime;
+    //float startTime;
 
     public static BoxManager instance;
 
@@ -34,6 +34,23 @@ public class BoxManager : MonoBehaviour
 
     int cur = 0;
 
+    [HideInInspector]
+    public Queue<int> boxPrioQueue = new Queue<int>();
+
+    // 1 - straight away
+    // 2 - 3rd box
+    // 3 - 6th box
+    // 4 - 10th box
+    // 5 - 15th box
+    // 6 - 22nd box
+
+    int currentBoxWave;
+
+    [HideInInspector]
+    public int availableBoxTypes = 1;
+
+    public int boxNum = 1;
+
     private void Awake()
     {
         instance = this;
@@ -41,22 +58,27 @@ public class BoxManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < weights.Length; i++)
+        availableBoxTypes = 1;
+        currentBoxWave = 0;
+
+        savedWeights = weights;
+
+        for (int i = 1; i < weights.Length; i++)
         {
-            weightSum += weights[i];
+            weights[i] = 0;
         }
+
+        weightSum = weights[0];
 
         for (int i = 0; i < boxNames.Count; i++)
         {
             valueDict.Add(boxNames[i], boxValues[i]);
         }
-
-        startTime = Time.time;
     }
 
     private void Update()
     {
-        int boxNum = 1; //Mathf.Clamp((int)(Time.time - startTime) / 60, 1, 10);
+        //int boxNum = 1; //Mathf.Clamp((int)(Time.time - startTime) / 60, 1, 10);
 
         if (spawnTime > 0)
         {
@@ -99,6 +121,38 @@ public class BoxManager : MonoBehaviour
 
     IEnumerator SpawnBoxes(int num)
     {
+        currentBoxWave += 1;
+        if (currentBoxWave == 3)
+        {
+            weights[1] = savedWeights[1];
+            weightSum += weights[1];
+            availableBoxTypes++;
+        }
+        else if (currentBoxWave == 6)
+        {
+            weights[2] = savedWeights[2];
+            weightSum += weights[2];
+            availableBoxTypes++;
+        }
+        else if (currentBoxWave == 10)
+        {
+            weights[3] = savedWeights[3];
+            weightSum += weights[3];
+            availableBoxTypes++;
+        }
+        else if (currentBoxWave == 15)
+        {
+            weights[4] = savedWeights[4];
+            weightSum += weights[4];
+            availableBoxTypes++;
+        }
+        else if (currentBoxWave == 22)
+        {
+            weights[5] = savedWeights[5];
+            weightSum += weights[5];
+            availableBoxTypes++;
+        }
+
         for (int i = 0; i < num; i++)
         {
             /*
@@ -110,7 +164,11 @@ public class BoxManager : MonoBehaviour
 
             int boxIndex;
 
-            if (cur >= firstFewBoxes.Length)
+            if (boxPrioQueue.Count > 0)
+            {
+                boxIndex = boxPrioQueue.Dequeue();
+            }
+            else if (cur >= firstFewBoxes.Length)
             {
                 int rng = Random.Range(0, weightSum);
                 for (boxIndex = 0; boxIndex < weights.Length; boxIndex++)
