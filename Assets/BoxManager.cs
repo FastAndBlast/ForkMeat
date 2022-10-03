@@ -19,7 +19,8 @@ public class BoxManager : MonoBehaviour
 
     public int[] weights = new int[6] { 0, 0, 0, 0, 0, 0 };
 
-    int weightSum = 0;
+    [HideInInspector]
+    public int weightSum = 0;
 
     //int boxNum = 1;
 
@@ -100,17 +101,19 @@ public class BoxManager : MonoBehaviour
     {
         for (int i = 0; i < num; i++)
         {
+            /*
             if (targetConveyer.boxes.Count == 10)
             {
                 GameManager.instance.EndGame();
             }
+            */
 
             int boxIndex;
 
             if (cur >= firstFewBoxes.Length)
             {
                 int rng = Random.Range(0, weightSum);
-                for (boxIndex = 0; boxIndex < weights.Count(); boxIndex++)
+                for (boxIndex = 0; boxIndex < weights.Length; boxIndex++)
                 {
                     rng -= weights[boxIndex];
                     if (rng <= 0)
@@ -122,12 +125,10 @@ public class BoxManager : MonoBehaviour
             else
             {
                 boxIndex = (int)firstFewBoxes[cur] - 48;
-                print(firstFewBoxes[cur]);
                 cur++;
-                print(boxIndex);
             }
 
-            boxIndex = Mathf.Clamp(boxIndex, 0, weights.Count() - 1);
+            boxIndex = Mathf.Clamp(boxIndex, 0, weights.Length - 1);
 
             GameObject newBox = Instantiate(boxPrefabs[boxIndex]);
             newBox.transform.position = spawnPoint.transform.position;

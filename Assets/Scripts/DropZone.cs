@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,9 +19,13 @@ public class DropZone : MonoBehaviour
 
     public List<GameObject> inside = new List<GameObject>();
 
+    public GameObject particlePrefab;
+
     //static List<int> boxValues = new List<int>();
 
     //Dictionary<>
+
+    public List<GameObject> removeNextFrame = new List<GameObject>();
 
     private void Awake()
     {
@@ -34,7 +39,11 @@ public class DropZone : MonoBehaviour
 
     public void AddBox(GameObject box)
     {
-        
+        if (boxes.Contains(box))
+        {
+            return;
+        }
+
         Vector3 pos = box.transform.position;
         pos = new Vector3(Mathf.Clamp(pos.x, transform.position.x + 0.5f, transform.position.x + size.x - 0.5f),
                         pos.y,// + transform.position.y,
@@ -66,11 +75,16 @@ public class DropZone : MonoBehaviour
         box.transform.eulerAngles = rot;
         box.GetComponent<Rigidbody>().velocity = Vector3.zero;
         box.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        //OrderManager.instance.boxAmounts[box.name]++;
         boxes.Add(box);
+        OrderManager.instance.AddBox(box.name, this);
+
+        
     }
 
     public void Update()
     {
+        /*
         if (timeToRemove > 0)
         {
             timeToRemove -= Time.deltaTime;
@@ -78,12 +92,19 @@ public class DropZone : MonoBehaviour
         else
         {
             //TODO: ADD REWARDS AND EFFECTS
+            
             for (int i = 0; i < boxes.Count;)
             {
                 if (boxes[i].name == boxType)
                 {
                     GameManager.instance.score += BoxManager.instance.valueDict[boxes[i].name];
                     Shop.instance.money += BoxManager.instance.valueDict[boxes[i].name];
+                    //OrderManager.instance.boxAmounts[boxes[i].name]--;
+                    // TO DO
+
+                    GameObject particle = Instantiate(particlePrefab);
+                    particle.transform.position = boxes[i].transform.position;
+
                     Destroy(boxes[i]);
                     boxes.RemoveAt(i);
                 }
@@ -93,6 +114,28 @@ public class DropZone : MonoBehaviour
                 }
             }
             timeToRemove = maxTimeToRemove;
+        }
+        */
+    }
+
+    public void RemoveCorrectBox()
+    {
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            if (boxes[i].name == boxType && !removeNextFrame.Contains(boxes[i]))
+            {
+                GameObject box = boxes[i];
+                GameManager.instance.score += BoxManager.instance.valueDict[box.name];
+                Shop.instance.money += BoxManager.instance.valueDict[box.name];
+
+                GameObject particle = Instantiate(particlePrefab);
+                particle.transform.position = box.transform.position;
+
+                removeNextFrame.Add(boxes[i]);
+
+                StartCoroutine(RemoveBoxNextFrame(box));
+                break;
+            }
         }
     }
 
@@ -114,6 +157,7 @@ public class DropZone : MonoBehaviour
             if (dropZone.boxes.Contains(box))
             {
                 dropZone.boxes.Remove(box);
+                OrderManager.instance.RemoveBox(box.name, dropZone);
             }
         }
     }
@@ -167,4 +211,18 @@ public class DropZone : MonoBehaviour
         }
     }
     
+    IEnumerator RemoveBoxNextFrame(GameObject box)
+    {
+        yield return null;
+        boxes.Remove(box);
+        Destroy(box);
+        removeNextFrame.Remove(box);
+
+        if (inside.Contains(box))
+        {
+            inside.Remove(box);
+        }
+        yield break;
+    }
+
 }

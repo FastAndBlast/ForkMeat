@@ -8,9 +8,18 @@ public class CrateUI : MonoBehaviour
     public List<string> crateNames;
     public List<Sprite> crateSprites;
 
-    Dictionary<string, Sprite> dict = new Dictionary<string, Sprite>();
+    public static Dictionary<string, Sprite> dict = new Dictionary<string, Sprite>();
 
     public Conveyer targetConveyer;
+
+    /*
+    public static CrateUI instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    */
 
     private void Start()
     {
