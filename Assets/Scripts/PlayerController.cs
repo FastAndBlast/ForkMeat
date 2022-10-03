@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Box Throwing")]
     public float boxThrowStrength = 50f;
+    public float boxThrowUpStrength = 50f;
+    public float spin = 1.5f;
 
     [Header("Boost")]
     public bool boostEnabled;

@@ -7258,7 +7258,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   turnSpeed: 1.5
-  boxThrowStrength: 5
+  boxThrowStrength: 10
+  boxThrowUpStrength: 10
+  spin: 1.5
   boostEnabled: 0
   boostSpeed: 1
   boostCooldown: 1
@@ -50503,6 +50505,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1285312897}
+    - target: {fileID: 6723060388945092637, guid: 73f68183426c8d84496bd7b899c18cd4,
+        type: 3}
+      propertyPath: targetForwardShift
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f68183426c8d84496bd7b899c18cd4, type: 3}
 --- !u!1001 &1828011563
@@ -54124,6 +54131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeefBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3104893087605705803, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4587323652648688961, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
         type: 3}
       propertyPath: m_RootOrder
@@ -54132,17 +54144,17 @@ PrefabInstance:
     - target: {fileID: 4587323652648688961, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.16246
+      value: 53.49
       objectReference: {fileID: 0}
     - target: {fileID: 4587323652648688961, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: 0.759
       objectReference: {fileID: 0}
     - target: {fileID: 4587323652648688961, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.622148
+      value: 3.62
       objectReference: {fileID: 0}
     - target: {fileID: 4587323652648688961, guid: 06ac6efadc49f024e9dd7e64eec1cf6d,
         type: 3}
