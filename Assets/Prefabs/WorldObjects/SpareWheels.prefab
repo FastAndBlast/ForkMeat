@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2789227728543591581}
   - component: {fileID: 1232447265416520504}
   - component: {fileID: 3962744411541821426}
+  - component: {fileID: 1192134967247136950}
   m_Layer: 0
   m_Name: SpareWheels
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1192134967247136950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3314230943571703335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0075464053, y: 0.009775149, z: 0.00771399}
+  m_Center: {x: -0.00008182798, y: 0.0008750556, z: 0.0038171767}

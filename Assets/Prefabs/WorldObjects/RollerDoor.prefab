@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5855854112515559404}
   - component: {fileID: 7416293750408675401}
   - component: {fileID: 4687966383594534019}
+  - component: {fileID: 6655743412600180487}
   m_Layer: 0
   m_Name: RollerDoor
   m_TagString: Metal
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6655743412600180487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489683655851529558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.045321155, y: 0.064813346, z: 0.00329612}
+  m_Center: {x: 0.022660578, y: 0, z: -0.00045338817}
