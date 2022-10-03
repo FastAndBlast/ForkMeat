@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
@@ -11,10 +12,12 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
+    public float targetForwardShift;
+
     public Vector2 xBound = new Vector2(-10000, 10000);
     public Vector2 zBound = new Vector2(-10000, 10000);
 
-    private Vector3 offset;
+    //private Vector3 offset;
 
     private float originalY;
 
@@ -22,7 +25,7 @@ public class CameraController : MonoBehaviour
     {
         //target = PlayerController.instance;
         //offset = target.InverseTransformVector(transform.position) - target.localPosition;
-        offset = transform.position - target.position;
+        //offset = transform.position - target.position;
         originalY = transform.position.y;
     }
 
@@ -32,6 +35,8 @@ public class CameraController : MonoBehaviour
         {
             return;
         }
+
+        Vector3 horizontalForward = new Vector3(target.forward.x, 0, target.forward.z);
 
         Vector3 targetPosition = target.position; // + offset;
         //Vector3 targetPosition = target.TransformVector(target.localPosition + offset);
@@ -45,7 +50,7 @@ public class CameraController : MonoBehaviour
 
         //transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, turnSpeed);
 
-        transform.forward = target.parent.position - transform.position;
+        transform.forward = (target.parent.position + horizontalForward * targetForwardShift) - transform.position;
 
         transform.position = newPosition;
     }

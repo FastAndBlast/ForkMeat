@@ -16,6 +16,8 @@ public class DropZone : MonoBehaviour
     public float timeToRemove = 30f;
     float maxTimeToRemove;
 
+    public List<GameObject> inside = new List<GameObject>();
+
     //static List<int> boxValues = new List<int>();
 
     //Dictionary<>
@@ -35,7 +37,7 @@ public class DropZone : MonoBehaviour
         
         Vector3 pos = box.transform.position;
         pos = new Vector3(Mathf.Clamp(pos.x, transform.position.x + 0.5f, transform.position.x + size.x - 0.5f),
-                        pos.y,
+                        pos.y,// + transform.position.y,
                         Mathf.Clamp(pos.z, transform.position.z + 0.5f, transform.position.z + size.y - 0.5f));
 
         if (pos.x < 0)
@@ -51,7 +53,7 @@ public class DropZone : MonoBehaviour
             pos.z -= 1;
         }
 
-        pos.y = pos.y - pos.y % 1f + 0.5f;
+        pos.y = pos.y - pos.y % 1f + 0.75f;
 
         pos.z = pos.z - pos.z % 1 + 0.5f;
 
@@ -62,6 +64,8 @@ public class DropZone : MonoBehaviour
 
         box.transform.position = pos;
         box.transform.eulerAngles = rot;
+        box.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        box.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         boxes.Add(box);
     }
 
@@ -89,6 +93,17 @@ public class DropZone : MonoBehaviour
                 }
             }
             timeToRemove = maxTimeToRemove;
+        }
+    }
+
+    public static void CheckBoxAtAllDropZones(GameObject box)
+    {
+        foreach (DropZone dropZone in dropZones)
+        {
+            if (dropZone.inside.Contains(box))
+            {
+                dropZone.AddBox(box);
+            }
         }
     }
 
@@ -131,15 +146,25 @@ public class DropZone : MonoBehaviour
                 castPos.y += 0.8f;
             }
         }
+
+        if (!inside.Contains(other.gameObject))
+        {
+            inside.Add(other.gameObject);
+        }
+
     }
 
-    /*
+    
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Box" && boxes.Contains(other.gameObject))
+        //if (other.tag == "Box" && boxes.Contains(other.gameObject))
+        //{
+        //    boxes.Remove(other.gameObject);
+        //}
+        if (inside.Contains(other.gameObject))
         {
-            boxes.Remove(other.gameObject);
+            inside.Remove(other.gameObject);
         }
     }
-    */
+    
 }

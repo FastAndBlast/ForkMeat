@@ -131,13 +131,16 @@ public class Forklift : MonoBehaviour
         box.GetComponent<Rigidbody>().isKinematic = false;
         //box.transform.SetParent(null, false);
 
-        Vector3 randomForce = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(0, 1f)).normalized;
+        //Vector3 randomForce = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(0, 1f)).normalized;
+        Vector3 randomForce = Vector3.forward;
         box.GetComponent<Rigidbody>().mass = 0.1f;
+        box.transform.position += Vector3.up * 0.5f;
         box.GetComponent<Rigidbody>().AddForce(transform.TransformDirection(randomForce) * PlayerController.instance.boxThrowStrength);
-        box.GetComponent<Rigidbody>().AddForce(Vector3.up * PlayerController.instance.boxThrowStrength);
-        box.GetComponent<Rigidbody>().AddTorque(Vector3.right * 5);
+        //box.GetComponent<Rigidbody>().AddForce(Vector3.up * PlayerController.instance.boxThrowStrength);
+        box.GetComponent<Rigidbody>().AddForce(Vector3.up * PlayerController.instance.boxThrowUpStrength);
+        box.GetComponent<Rigidbody>().AddTorque(Vector3.right * PlayerController.instance.spin);
         //box.tag = "Box";
-        StartCoroutine(FixBox(1f, box));
+        StartCoroutine(FixBox(0.5f, box));
 
         boxes.Remove(box);
     }
@@ -193,6 +196,7 @@ public class Forklift : MonoBehaviour
         box.GetComponent<Rigidbody>().mass = 10f;
         box.tag = "Box";
         Conveyer.CheckBoxAtAllConveyers(box);
+        DropZone.CheckBoxAtAllDropZones(box);
         yield break;
     }
 }
