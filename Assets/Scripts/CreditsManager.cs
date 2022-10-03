@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreditsManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class CreditsManager : MonoBehaviour
         {
             transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
         }
+		else
+		{
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+		}
         //print(transform.localPosition.y);
     }
 }

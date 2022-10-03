@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
-  scrollSpeed: 25
+  scrollSpeed: 102.65
   scrollLockPoint: 75
 --- !u!114 &1545708891
 MonoBehaviour:
