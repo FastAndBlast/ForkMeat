@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         instance = this;
 
         rb = GetComponent<Rigidbody>();
-		    revDownCooldown = 0.75f;
 
         Vector3 centerOfMass = rb.centerOfMass;
 
@@ -45,6 +44,12 @@ public class PlayerController : MonoBehaviour
 
         boostDuration = 0f;
     }
+
+	void Start()
+	{
+		AudioManager.instance.Play("EngineStart", 0.2f);
+		revDownCooldown = 2.95f;
+	}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -120,6 +125,7 @@ public class PlayerController : MonoBehaviour
             {
                 //rb.AddForce(transform.forward * boostSpeed);
                 //ADD DASH
+				AudioManager.instance.Play("Boost", 0.2f);
                 boostDuration = boostDurationMax;
                 boostCooldownTime = boostCooldown;
             }
