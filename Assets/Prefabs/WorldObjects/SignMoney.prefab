@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 916539412017900038}
   - component: {fileID: 4258127233311827363}
   - component: {fileID: 2086045556423463273}
+  - component: {fileID: 3598289733233808314}
   m_Layer: 0
   m_Name: SignMoney
   m_TagString: Untagged
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3598289733233808314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573051242466029756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0014216339, y: 0.008378205, z: 0.018272106}
+  m_Center: {x: -0.0000000011641532, y: -0.00032980583, z: -0.0090529155}
