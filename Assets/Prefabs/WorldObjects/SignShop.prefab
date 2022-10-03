@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7541272166318048703}
   - component: {fileID: 6847758972743748122}
   - component: {fileID: 8713576636805709520}
+  - component: {fileID: 1188443041825423976}
   m_Layer: 0
   m_Name: SignShop
   m_TagString: Untagged
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1188443041825423976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200177977447800581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0014216341, y: 0.022014182, z: 0.02013376}
+  m_Center: {x: -0.0000000034633558, y: -0.0005489675, z: -0.009906113}
