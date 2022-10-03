@@ -98,14 +98,20 @@ public class OrderManager : MonoBehaviour
                 GameManager.instance.EndGame();
             }
 
-            canvasTransform.GetChild(i).gameObject.SetActive(true);
+            Color col = canvasTransform.GetChild(i).GetComponent<Image>().color;
+            col.a = 100f/255f;
+            canvasTransform.GetChild(i).GetComponent<Image>().color = col; //.gameObject.SetActive(true);
+            canvasTransform.GetChild(i).Find("Panel").gameObject.SetActive(true);
             canvasTransform.GetChild(i).Find("Panel").GetComponent<Image>().fillAmount = orders[i].time / orders[i].timeMax;
             canvasTransform.GetChild(i).Find("Panel").Find("Image").GetComponent<Image>().sprite = CrateUI.dict[orders[i].boxType];
             canvasTransform.GetChild(i).Find("Panel").Find("OrderText").GetComponent<TextMeshProUGUI>().text = boxAmounts[orders[i].boxType].Count.ToString() + "/" + orders[i].amount.ToString();
         }
         for (; i < 3; i++)
         {
-            canvasTransform.GetChild(i).gameObject.SetActive(false);
+            Color col = canvasTransform.GetChild(i).GetComponent<Image>().color;
+            col.a = 0f;
+            canvasTransform.GetChild(i).GetComponent<Image>().color = col;
+            canvasTransform.GetChild(i).Find("Panel").gameObject.SetActive(false);
         }
     }
 
@@ -170,13 +176,13 @@ public class OrderManager : MonoBehaviour
             return;
         }
 
-        Order newOrder = new Order(20);
+        Order newOrder = new Order(orderLength);
         
         int boxIndex = 0;
 
         bool firstRun = true;
 
-        while ((existingOrders.Contains(BoxManager.instance.boxNames[boxIndex]) && BoxManager.instance.availableBoxTypes > existingOrders.Count) || firstRun)
+        while ((existingOrders.Contains(BoxManager.instance.boxNames[boxIndex]) && existingOrders.Count < BoxManager.instance.availableBoxTypes) || firstRun)
         {
             if (boxPrioQueue.Count > 0)
             {
