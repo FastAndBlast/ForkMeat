@@ -61,7 +61,7 @@ public class BoxManager : MonoBehaviour
         availableBoxTypes = 1;
         currentBoxWave = 0;
 
-        savedWeights = weights;
+        weights.CopyTo(savedWeights, 0);
 
         for (int i = 1; i < weights.Length; i++)
         {

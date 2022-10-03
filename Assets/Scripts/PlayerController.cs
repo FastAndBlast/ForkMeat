@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (boostDuration > 0)
         {
-            if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 2f)
+            if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 3f * speed)
             {
                 Forklift.instance.ExplodeBoxes();
                 GameObject particles = Instantiate(boostCollisionParticles);
