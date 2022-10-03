@@ -26,7 +26,7 @@ public class ShopUI : MonoBehaviour
 
     private void Update()
     {
-        moneyText.text = "$" + Shop.money.ToString();
+        moneyText.text = "$" + Shop.instance.money.ToString();
     }
 
     public void UpdateValues()
@@ -52,20 +52,24 @@ public class ShopUI : MonoBehaviour
     public void UpgradeCapacity()
     { 
         Shop.instance.UpgradeCapacity();
+        UpdateValues();
     }
 
     public void UpgradeSpeed()
     {
         Shop.instance.UpgradeSpeed();
+        UpdateValues();
     }
 
     public void UpgradeBoost()
     {
         Shop.instance.UpgradeBoost();
+        UpdateValues();
     }
 
     public void UpgradeMap()
     {
         Shop.instance.UpgradeMap();
+        UpdateValues();
     }
 }

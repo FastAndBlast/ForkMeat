@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Speed")]
     public float speed;
     public float turnSpeed;
 
-    public Rigidbody rb;
-
-    public int maxBoxes = 2;
-
+    [Header("Box Throwing")]
     public float boxThrowStrength = 50f;
-
-    public float downForce = 1000f;
 
     [Header("Boost")]
     public bool boostEnabled;
     public float boostSpeed;
     public float boostCooldown;
+    public float boostDurationMax;
+
+    [Header("Don't Touch")]
+    public int maxBoxes = 2;
+    public float downForce = 1000f;
+    public Rigidbody rb;
+
+    // SFX stuff
     float boostCooldownTime;
     float revUpCooldown;
     float revDownCooldown;
@@ -27,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public float boostDuration = 0f;
-    public float boostDurationMax;
 
     public static PlayerController instance;
 
@@ -54,6 +57,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (GameManager.gameOver)
+        {
+            return;
+        }
+
         rb.AddForceAtPosition(Vector3.down * downForce, rb.worldCenterOfMass);
 
         //Vector3 vel = rb.velocity;
@@ -63,11 +71,11 @@ public class PlayerController : MonoBehaviour
 
         if (boostDuration > 0)
         {
-            if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 0.25f)
+            if (boostDuration < boostDurationMax - 0.15f && rb.velocity.magnitude < 2f)
             {
                 Forklift.instance.ExplodeBoxes();
             }
-            rb.AddForce(transform.forward * speed * 3 * Time.fixedDeltaTime * GameManager.timeScale);
+            rb.AddForce(transform.forward * speed * 100000 * 3 * Time.fixedDeltaTime * GameManager.timeScale);
             boostDuration -= Time.deltaTime;
         }
         else
@@ -77,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
             Vector3 forwardVector = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
 
-            rb.AddForce(forwardVector * vertical * speed * Time.fixedDeltaTime * GameManager.timeScale);
+            rb.AddForce(forwardVector * vertical * speed * 100000 * Time.fixedDeltaTime * GameManager.timeScale);
             //rb.MoveRotation(transform.rotation * deltaRotation);
 
             //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
