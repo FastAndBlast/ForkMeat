@@ -8,7 +8,7 @@ public class CollisionNoise : MonoBehaviour
 	{
 		if (collision.gameObject.tag != "Player") 
 		{
-			AudioManager.instance.Play("WoodHit", Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 30);
+			AudioManager.instance.Play("WoodHit", Mathf.Pow(collision.relativeVelocity.magnitude, 2) / 60);
 		}
 	}
 }

@@ -8381,7 +8381,7 @@ Transform:
   - {fileID: 1285312897}
   - {fileID: 286908968}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &250243008
 PrefabInstance:
@@ -24191,135 +24191,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 808174464}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &808664480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 808664483}
-  - component: {fileID: 808664482}
-  - component: {fileID: 808664481}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &808664481
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808664480}
-  m_Enabled: 1
---- !u!114 &808664482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808664480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb6e85d0ecc3c64da61ac159a8ba75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Song
-    clip: {fileID: 8300000, guid: 63ce85b199c6816479e6c55658985e72, type: 3}
-    startTime: 0.075
-    loop: 1
-    source: {fileID: 0}
-  - name: WoodMetalHit
-    clip: {fileID: 8300000, guid: 03e495174f729a544a8adec8b8082ebe, type: 3}
-    startTime: 0.075
-    loop: 0
-    source: {fileID: 0}
-  - name: WoodHit
-    clip: {fileID: 8300000, guid: 02873b08fb56e024dab53a85554fc426, type: 3}
-    startTime: 0.075
-    loop: 0
-    source: {fileID: 0}
-  - name: EngineIdle
-    clip: {fileID: 8300000, guid: 0829ef1bbde32ee478b02c1945556309, type: 3}
-    startTime: 0.057
-    loop: 0
-    source: {fileID: 0}
-  - name: EngineStart
-    clip: {fileID: 8300000, guid: c794329b802343f449c862608cad189a, type: 3}
-    startTime: 0.056
-    loop: 0
-    source: {fileID: 0}
-  - name: EngineTransUp
-    clip: {fileID: 8300000, guid: d5d9a6d664fbf544fb2ac3e0631d1afa, type: 3}
-    startTime: 0.06
-    loop: 0
-    source: {fileID: 0}
-  - name: EngineRev
-    clip: {fileID: 8300000, guid: 1ae4622e466fb6441bd8fb781ca4b27a, type: 3}
-    startTime: 0.053
-    loop: 0
-    source: {fileID: 0}
-  - name: EngineTransDown
-    clip: {fileID: 8300000, guid: a30ba40d01044a9468e0e559d0e5b88e, type: 3}
-    startTime: 0.056
-    loop: 0
-    source: {fileID: 0}
-  - name: MetalHit4
-    clip: {fileID: 8300000, guid: 173e64c511a7dcd4782e92284f85cbab, type: 3}
-    startTime: 0.075
-    loop: 0
-    source: {fileID: 0}
-  - name: Putdown
-    clip: {fileID: 8300000, guid: 3a096fbdec0a99a44a9689ee9d24be3d, type: 3}
-    startTime: 0.075
-    loop: 0
-    source: {fileID: 0}
-  - name: Pickup
-    clip: {fileID: 8300000, guid: a0b06ff236ef1524798cecddda1eda33, type: 3}
-    startTime: 0.075
-    loop: 0
-    source: {fileID: 0}
-  - name: MetalHit1
-    clip: {fileID: 8300000, guid: b84bdfc72b64281468c56d8b12c95e57, type: 3}
-    startTime: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: MetalHit2
-    clip: {fileID: 8300000, guid: c44d26bce2a56ee458223287c42b8765, type: 3}
-    startTime: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: MetalHit3
-    clip: {fileID: 8300000, guid: 9166087f6d46cb847ad956fd845e4ee4, type: 3}
-    startTime: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Boost
-    clip: {fileID: 8300000, guid: 570c7795857069540b8d2c8094407826, type: 3}
-    startTime: 0.064
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &808664483
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808664480}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808758376
 GameObject:
   m_ObjectHideFlags: 0
@@ -29571,7 +29442,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &976589589
 MonoBehaviour:
@@ -42462,7 +42333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1399105775
 PrefabInstance:
@@ -46504,7 +46375,7 @@ PrefabInstance:
     - target: {fileID: 4252615959002880431, guid: 76f94f4990b12024f8bfc9b1c6969b2d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4252615959002880431, guid: 76f94f4990b12024f8bfc9b1c6969b2d,
         type: 3}
@@ -53301,7 +53172,7 @@ Transform:
   - {fileID: 4801949}
   - {fileID: 984975774}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706638287
 GameObject:
@@ -56894,7 +56765,7 @@ Transform:
   - {fileID: 1126300873}
   - {fileID: 1761272253}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1798868708
 PrefabInstance:
@@ -66275,6 +66146,165 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2119853566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123188343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123188346}
+  - component: {fileID: 2123188345}
+  - component: {fileID: 2123188344}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &2123188344
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123188343}
+  m_Enabled: 1
+--- !u!114 &2123188345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123188343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb6e85d0ecc3c64da61ac159a8ba75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Song
+    clip: {fileID: 8300000, guid: 63ce85b199c6816479e6c55658985e72, type: 3}
+    startTime: 0.075
+    loop: 1
+    source: {fileID: 0}
+  - name: WoodMetalHit
+    clip: {fileID: 8300000, guid: 03e495174f729a544a8adec8b8082ebe, type: 3}
+    startTime: 0.075
+    loop: 0
+    source: {fileID: 0}
+  - name: WoodHit
+    clip: {fileID: 8300000, guid: 02873b08fb56e024dab53a85554fc426, type: 3}
+    startTime: 0.075
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineIdle
+    clip: {fileID: 8300000, guid: 0829ef1bbde32ee478b02c1945556309, type: 3}
+    startTime: 0.057
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineStart
+    clip: {fileID: 8300000, guid: c794329b802343f449c862608cad189a, type: 3}
+    startTime: 0.056
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineTransUp
+    clip: {fileID: 8300000, guid: d5d9a6d664fbf544fb2ac3e0631d1afa, type: 3}
+    startTime: 0.06
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineRev
+    clip: {fileID: 8300000, guid: 1ae4622e466fb6441bd8fb781ca4b27a, type: 3}
+    startTime: 0.053
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineTransDown
+    clip: {fileID: 8300000, guid: a30ba40d01044a9468e0e559d0e5b88e, type: 3}
+    startTime: 0.056
+    loop: 0
+    source: {fileID: 0}
+  - name: MetalHit4
+    clip: {fileID: 8300000, guid: 173e64c511a7dcd4782e92284f85cbab, type: 3}
+    startTime: 0.075
+    loop: 0
+    source: {fileID: 0}
+  - name: Putdown
+    clip: {fileID: 8300000, guid: 3a096fbdec0a99a44a9689ee9d24be3d, type: 3}
+    startTime: 0.075
+    loop: 0
+    source: {fileID: 0}
+  - name: Pickup
+    clip: {fileID: 8300000, guid: a0b06ff236ef1524798cecddda1eda33, type: 3}
+    startTime: 0.075
+    loop: 0
+    source: {fileID: 0}
+  - name: MetalHit1
+    clip: {fileID: 8300000, guid: b84bdfc72b64281468c56d8b12c95e57, type: 3}
+    startTime: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MetalHit2
+    clip: {fileID: 8300000, guid: c44d26bce2a56ee458223287c42b8765, type: 3}
+    startTime: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MetalHit3
+    clip: {fileID: 8300000, guid: 9166087f6d46cb847ad956fd845e4ee4, type: 3}
+    startTime: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Boost
+    clip: {fileID: 8300000, guid: 570c7795857069540b8d2c8094407826, type: 3}
+    startTime: 0.064
+    loop: 0
+    source: {fileID: 0}
+  - name: Kaching
+    clip: {fileID: 8300000, guid: 1dc6b44423ca9894eac6da84b8b1fd31, type: 3}
+    startTime: 0.258
+    loop: 0
+    source: {fileID: 0}
+  - name: Rachet
+    clip: {fileID: 8300000, guid: 4ba0cd8bfa59545439d80c0d95271f1f, type: 3}
+    startTime: 0.067
+    loop: 0
+    source: {fileID: 0}
+  - name: Whistle
+    clip: {fileID: 8300000, guid: ab4c7e1470a18694dba6e3f74979b4e8, type: 3}
+    startTime: 0.06
+    loop: 0
+    source: {fileID: 0}
+  - name: EngineOff
+    clip: {fileID: 8300000, guid: dffd9782bafb4ea4c9649a60e1f5722a, type: 3}
+    startTime: 0.067
+    loop: 0
+    source: {fileID: 0}
+  - name: OrderUp
+    clip: {fileID: 8300000, guid: 9b29519dc0d09ef4aacae57afbbeeb43, type: 3}
+    startTime: 0.067
+    loop: 0
+    source: {fileID: 0}
+  - name: HurryUp
+    clip: {fileID: 8300000, guid: 227f7235560864744adc9c97548006de, type: 3}
+    startTime: 0.06
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &2123188346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123188343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2125257727
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -47,6 +47,11 @@ public class Shop : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        //money = 100;
+    }
+
     void Update()
     {
         if (Vector3.Distance(PlayerController.instance.transform.position, transform.position) > popUpDistance)
