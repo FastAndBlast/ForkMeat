@@ -116,13 +116,21 @@ public class ShopUI : MonoBehaviour
 
     public void UpgradeBoost()
     {
-        Shop.instance.UpgradeBoost();
+        string result = Shop.instance.UpgradeBoost();
+        if (result != "")
+        {
+            speed.Find("Description").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = result;
+        }
         UpdateValues();
     }
 
     public void UpgradeMap()
     {
-        Shop.instance.UpgradeMap();
+        string result = Shop.instance.UpgradeMap();
+        if (result != "")
+        {
+            map.Find("Description").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = result;
+        }
         UpdateValues();
     }
 }
