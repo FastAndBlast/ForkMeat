@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -116,6 +117,23 @@ public class DropZone : MonoBehaviour
             timeToRemove = maxTimeToRemove;
         }
         */
+        StartCoroutine(CheckForNulls());
+    }
+
+    public IEnumerator CheckForNulls()
+    {
+        while (true)
+        {
+            for (int i = 0; i < boxes.Count; i++)
+            {
+                if (boxes[i] == null)
+                {
+                    boxes.RemoveAt(i);
+                    i--;
+                }
+            }
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 
     public void RemoveCorrectBox()
