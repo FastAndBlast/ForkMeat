@@ -134,3 +134,5 @@ MonoBehaviour:
   speed: 0.1
   turnSpeed: 0.1
   target: {fileID: 0}
+  xBound: {x: -60, y: 70}
+  zBound: {x: -34, y: 21}
