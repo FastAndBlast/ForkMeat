@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DropoffMaterial
+  m_Name: DropoffMatSloth
   m_Shader: {fileID: -6465566751694194690, guid: 7db6b11387a402747943cc6740d51d59,
     type: 3}
   m_ValidKeywords: []
@@ -41,7 +41,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _DropZoneColour: {r: 0.8113207, g: 0, b: 0, a: 0}
+    - _DropZoneColour: {r: 0.65882355, g: 0.24705882, b: 0.6313726, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7347220820608391237
 MonoBehaviour:
