@@ -1,0 +1,740 @@
+fileFormatVersion: 2
+guid: a18947d5db3da2046956ba70aed71167
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0676339011cdf4f4799924da843bc619
+      internalID: 1833140586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feccc8a3f9c90d64cbdf7ae3884fa419
+      internalID: -666913160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_2
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4f95f996c064146850056cd1580903
+      internalID: -1664721013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_3
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7e92590a68a0498acfc4a32d84a44
+      internalID: -285335965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_4
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ad432629235384d8fa91a8e8f79b3d
+      internalID: 582483863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_5
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d85a7cc5b71d44d8f4a1edf0dff07b
+      internalID: -1572798634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_6
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1755.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d22c34180fdf9d49864c806cf625a20
+      internalID: 816096842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f903e57aba7ba25498edfa30ec317518
+      internalID: -2099260077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_8
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48920671dd838034898c1cc70e749aec
+      internalID: 147512713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_9
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203356662648a994ea7cd3ca7d4d14f2
+      internalID: -1423171095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_10
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a399addb15d7cc646b7ad58e4b430079
+      internalID: 1616918409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_11
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3ef2e1652661743a43753ba466faf2
+      internalID: -845971842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_12
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cf3737e0cfb5c47bd37ba1b23ec81c
+      internalID: -844198811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_13
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1463.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5e872c5ef941c43a1e33a8f127f738
+      internalID: -999938384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ad35f77ad1b3b4d94f63354b000818
+      internalID: -1729725707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_15
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d8d0111d772b44199968863a1671ff
+      internalID: -1401802945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_16
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a466b1732dcd0c4795e8bcd8f52cc5c
+      internalID: -1063171192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_17
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990f8defc2b6feb49b89769d7659c0be
+      internalID: 1830414875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_18
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16cbd4126b4c6342b2b13882c1171f3
+      internalID: -2087034387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_19
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4853bc71d929f14293b1f8657782595
+      internalID: -1548295891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_20
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1171.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290c62ab340d64b43a7d8d101a10f8b3
+      internalID: 557094943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6a9c3456648a1418b3e6bc24db3f59
+      internalID: -1525877548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_22
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76ad23cd07a2de4283ddfe5dace48af
+      internalID: -1225744605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_23
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44010ae07269d5409e1aa08333830e6
+      internalID: -2132113438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_24
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7f4f6a13b797b43b9a4912ad769c15
+      internalID: 102011429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_25
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b8ce7ff3a1d8749a5ab8d3eaa50bc6
+      internalID: -1990823215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmokeSpriteSheetYellow_26
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 879.4286
+        width: 292.57144
+        height: 292.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efab9a2428e5f24d86bf3d5a141d1ff
+      internalID: -1550751805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ca17bddc7f98d584da3de738d5d81da7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SmokeSpriteSheetYellow_23: -2132113438
+      SmokeSpriteSheetYellow_9: -1423171095
+      SmokeSpriteSheetYellow_13: -999938384
+      SmokeSpriteSheetYellow_1: -666913160
+      SmokeSpriteSheetYellow_3: -285335965
+      SmokeSpriteSheetYellow_2: -1664721013
+      SmokeSpriteSheetYellow_17: 1830414875
+      SmokeSpriteSheetYellow_4: 582483863
+      SmokeSpriteSheetYellow_15: -1401802945
+      SmokeSpriteSheetYellow_14: -1729725707
+      SmokeSpriteSheetYellow_6: 816096842
+      SmokeSpriteSheetYellow_24: 102011429
+      SmokeSpriteSheetYellow_11: -845971842
+      SmokeSpriteSheetYellow_12: -844198811
+      SmokeSpriteSheetYellow_19: -1548295891
+      SmokeSpriteSheetYellow_5: -1572798634
+      SmokeSpriteSheetYellow_20: 557094943
+      SmokeSpriteSheetYellow_0: 1833140586
+      SmokeSpriteSheetYellow_8: 147512713
+      SmokeSpriteSheetYellow_10: 1616918409
+      SmokeSpriteSheetYellow_16: -1063171192
+      SmokeSpriteSheetYellow_25: -1990823215
+      SmokeSpriteSheetYellow_7: -2099260077
+      SmokeSpriteSheetYellow_18: -2087034387
+      SmokeSpriteSheetYellow_21: -1525877548
+      SmokeSpriteSheetYellow_22: -1225744605
+      SmokeSpriteSheetYellow_26: -1550751805
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

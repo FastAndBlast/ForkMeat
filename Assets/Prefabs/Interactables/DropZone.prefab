@@ -134,6 +134,8 @@ MonoBehaviour:
   boxes: []
   timeToRemove: 30
   inside: []
+  particlePrefab: {fileID: 6422705651329163510, guid: 86d1d55e2062f674098685a64460564b,
+    type: 3}
 --- !u!65 &6233212841353616736
 BoxCollider:
   m_ObjectHideFlags: 0
