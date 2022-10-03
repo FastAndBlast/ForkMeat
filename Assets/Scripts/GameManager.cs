@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         if (!gameOver)
         {
             highScore = Mathf.Max(highScore, score);
-            EndScreenManager.instance.gameObject.SetActive(true);
+            EndScreenManager.instance.transform.GetChild(0).gameObject.SetActive(true);
             EndScreenManager.instance.UpdateValues();
             Camera.main.gameObject.SetActive(false);
             driftCamera.SetActive(true);

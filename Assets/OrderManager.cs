@@ -37,6 +37,9 @@ public class OrderManager : MonoBehaviour
 
     List<string> existingOrders = new List<string>();
 
+    [HideInInspector]
+    public Queue<int> boxPrioQueue = new Queue<int>();
+
     private void Awake()
     {
         instance = this;
@@ -169,9 +172,14 @@ public class OrderManager : MonoBehaviour
 
         bool firstRun = true;
 
-        while (existingOrders.Contains(BoxManager.instance.boxNames[boxIndex]) || firstRun)
+        while ((existingOrders.Contains(BoxManager.instance.boxNames[boxIndex]) && BoxManager.instance.availableBoxTypes > existingOrders.Count) || firstRun)
         {
-            if (cur >= firstFewOrders.Length)
+            if (boxPrioQueue.Count > 0)
+            {
+                boxIndex = boxPrioQueue.Dequeue();
+                break;
+            }
+            else if (cur >= firstFewOrders.Length)
             {
                 int rng = Random.Range(0, BoxManager.instance.weightSum);
                 for (boxIndex = 0; boxIndex < BoxManager.instance.weights.Length; boxIndex++)
@@ -206,6 +214,10 @@ public class OrderManager : MonoBehaviour
             orders.Add(newOrder);
             existingOrders.Add(newOrder.boxType);
             AudioManager.instance.Play("Whistle", 0.1f);
+            for (int i = 0; i < newOrder.amount; i++)
+            {
+                BoxManager.instance.boxPrioQueue.Enqueue(boxIndex);
+            }
         }
     }
 }

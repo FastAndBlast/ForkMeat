@@ -18,29 +18,32 @@ public class Shop : MonoBehaviour
     [Header("Capacity Upgrade")]
     public int capacityCost = 7;
     public int capacityCostIncrease = 7;
+    public int maxCapacityUpgrades = 2;
 
     [Header("Speed Upgrade")]
     public int speedCost = 3;
     public int speedCostIncrease = 3;
     public float speedUpgrade = 0.5f;
     public float turnUpgrade = 12.5f;
+    public int maxSpeedUpgrades = -1;
 
     [Header("Boost Upgrade")]
     public int boostCost = 6;
     public int boostCostIncrease = 6;
     public float boostUpgrade = 1f;
+    public int maxBoostUpgrades = 3;
 
     [Header("Map Upgrade")]
     public int mapCost = 10;
     public int mapCostIncrease = 10;
+    public int maxMapUpgrades = 1;
 
 
 
 
 
-    
-    
-    
+
+
 
     private void Awake()
     {
@@ -99,7 +102,12 @@ public class Shop : MonoBehaviour
             PlayerController.instance.UpgradeBoxMax();
             money -= capacityCost;
             capacityCost += capacityCostIncrease;
-			AudioManager.instance.Play("Kaching", 0.5f);
+            maxCapacityUpgrades -= 1;
+            if (maxCapacityUpgrades == 0)
+            {
+                ShopUI.instance.RemoveShopOption("CarryCapacity");
+            }
+            AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -111,7 +119,12 @@ public class Shop : MonoBehaviour
             PlayerController.instance.turnSpeed += turnUpgrade;
             money -= speedCost;
             speedCost += speedCostIncrease;
-			AudioManager.instance.Play("Kaching", 0.5f);
+            maxSpeedUpgrades -= 1;
+            if (maxSpeedUpgrades == 0)
+            {
+                ShopUI.instance.RemoveShopOption("Speed");
+            }
+            AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -129,7 +142,12 @@ public class Shop : MonoBehaviour
             }
             money -= boostCost;
             boostCost += boostCostIncrease;
-			AudioManager.instance.Play("Kaching", 0.5f);
+            maxBoostUpgrades -= 1;
+            if (maxBoostUpgrades == 0)
+            {
+                ShopUI.instance.RemoveShopOption("Boost");
+            }
+            AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
 
@@ -139,7 +157,16 @@ public class Shop : MonoBehaviour
         {
             money -= mapCost;
             mapCost += mapCostIncrease;
-            MapUpgradeManager.instance.Upgrade();
+            maxMapUpgrades -= 1;
+            if (maxMapUpgrades == 0)
+            {
+                BoxManager.instance.boxNum += 1;
+                ShopUI.instance.RemoveShopOption("Map");
+            }
+            else
+            {
+                MapUpgradeManager.instance.Upgrade();
+            }
 			AudioManager.instance.Play("Kaching", 0.5f);
         }
     }
