@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     //AudioManager
 
+    public GameObject boxNoisePrefab;
+
     void Awake()
     {
 
@@ -24,7 +26,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {

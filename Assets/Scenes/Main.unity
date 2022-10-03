@@ -66837,6 +66837,7 @@ GameObject:
   - component: {fileID: 2123188346}
   - component: {fileID: 2123188345}
   - component: {fileID: 2123188344}
+  - component: {fileID: 2123188347}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -66970,6 +66971,8 @@ MonoBehaviour:
     startTime: 0.06
     loop: 0
     source: {fileID: 0}
+  boxNoisePrefab: {fileID: 6798952623793206128, guid: b718493f93ac20c46947d5101771d4d1,
+    type: 3}
 --- !u!4 &2123188346
 Transform:
   m_ObjectHideFlags: 0
@@ -66985,6 +66988,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123188347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123188343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597344ac88a25b4780227ca1ed82fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2125257727
 PrefabInstance:
   m_ObjectHideFlags: 0
