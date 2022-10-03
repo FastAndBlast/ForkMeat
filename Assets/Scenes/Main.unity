@@ -1295,6 +1295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: PorkBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2003,6 +2008,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: LambBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2542,6 +2552,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: BeefBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -3336,6 +3351,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: PorkBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -4123,7 +4143,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 685411664, guid: 3c707f52bbb9930438e0da9716ce1bdb, type: 3}
       propertyPath: firstFewBoxes
-      value: 005122
+      value: 00102012003021031024
+      objectReference: {fileID: 0}
+    - target: {fileID: 685411664, guid: 3c707f52bbb9930438e0da9716ce1bdb, type: 3}
+      propertyPath: weights.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 685411664, guid: 3c707f52bbb9930438e0da9716ce1bdb, type: 3}
+      propertyPath: weights.Array.data[2]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6854096128859746103, guid: 3c707f52bbb9930438e0da9716ce1bdb,
         type: 3}
@@ -7228,10 +7256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9add34a020e8ae6438beae76a1475944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  turnSpeed: 1
-  boxThrowStrength: 20
-  boostEnabled: 1
+  speed: 3
+  turnSpeed: 1.5
+  boxThrowStrength: 5
+  boostEnabled: 0
   boostSpeed: 1
   boostCooldown: 1
   boostDurationMax: 0.5
@@ -8908,6 +8936,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: SlothBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -13453,6 +13486,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: LambBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -17268,6 +17306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: BeefBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -32549,6 +32592,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: PorkBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -37253,7 +37301,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 685411663}
   weights: 0a0000000500000005000000050000000500000001000000
   targetConveyer: {fileID: 96636753}
-  firstFewBoxes: 005122
+  firstFewBoxes: 500102012003021031024
 --- !u!4 &1398479571
 Transform:
   m_ObjectHideFlags: 0
@@ -46209,6 +46257,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: BeefBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -46872,7 +46925,7 @@ MonoBehaviour:
   canvas: {fileID: 984975769}
   popUpDistance: 3
   open: 0
-  money: 100
+  money: 0
   capacityCost: 7
   capacityCostIncrease: 7
   speedCost: 3
@@ -48403,6 +48456,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: RooBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
@@ -48638,6 +48696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517811768}
     m_Modifications:
+    - target: {fileID: 156578992014290684, guid: d994853e4344011429b1a9632f0c383c,
+        type: 3}
+      propertyPath: boxType
+      value: RooBox
+      objectReference: {fileID: 0}
     - target: {fileID: 2711252171184675628, guid: d994853e4344011429b1a9632f0c383c,
         type: 3}
       propertyPath: m_RootOrder
