@@ -40,7 +40,7 @@ public class Forklift : MonoBehaviour
             DropBoxes();
 			AudioManager.instance.Play("Putdown");
         }
-        if (Input.GetButtonDown("DropBox") && boxes.Count > 0)
+        if (Input.GetButtonDown("DropBox") && boxes.Count > 0 && !Shop.instance.open)
         {
             RemoveBox();
 			AudioManager.instance.Play("Putdown");

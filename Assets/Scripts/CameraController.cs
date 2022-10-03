@@ -11,6 +11,9 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
+    public Vector2 xBound = new Vector2(-10000, 10000);
+    public Vector2 zBound = new Vector2(-10000, 10000);
+
     private Vector3 offset;
 
     private float originalY;
@@ -37,6 +40,8 @@ public class CameraController : MonoBehaviour
         float distance = Vector3.Distance(transform.position, targetPosition) / 2;
 
         Vector3 newPosition = Vector3.Slerp(transform.position, targetPosition, speed * (1 + distance / 10));
+
+        newPosition = new Vector3(Mathf.Clamp(newPosition.x, xBound.x, xBound.y), newPosition.y, Mathf.Clamp(newPosition.z, zBound.x, zBound.y));
 
         //transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, turnSpeed);
 

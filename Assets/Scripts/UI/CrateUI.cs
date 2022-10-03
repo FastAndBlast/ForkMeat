@@ -29,7 +29,7 @@ public class CrateUI : MonoBehaviour
             {
                 GameObject box = targetConveyer.boxes[i];
 
-                //imageTransform.GetComponent<Image>().sprite = dict[box.name];
+                imageTransform.GetComponent<Image>().sprite = dict[box.name];
                 float pos = targetConveyer.GetPositionOfBox(i);
                 imageTransform.transform.position = transform.Find("End").position * pos +
                                                     transform.Find("Start").position * (1 - pos);
