@@ -35,6 +35,10 @@ public class OrderManager : MonoBehaviour
     public float orderCooldown = 30f;
     float orderCooldownTime = 4;
 
+    public float orderLength = 30f;
+
+    public Transform canvasTransform;
+
     List<string> existingOrders = new List<string>();
 
     [HideInInspector]
@@ -94,14 +98,14 @@ public class OrderManager : MonoBehaviour
                 GameManager.instance.EndGame();
             }
 
-            transform.GetChild(i).Find("Panel").gameObject.SetActive(true);
-            transform.GetChild(i).Find("Panel").GetComponent<Image>().fillAmount = orders[i].time / orders[i].timeMax;
-            transform.GetChild(i).Find("Panel").Find("Image").GetComponent<Image>().sprite = CrateUI.dict[orders[i].boxType];
-            transform.GetChild(i).Find("Panel").Find("OrderText").GetComponent<TextMeshProUGUI>().text = boxAmounts[orders[i].boxType].Count.ToString() + "/" + orders[i].amount.ToString();
+            canvasTransform.GetChild(i).gameObject.SetActive(true);
+            canvasTransform.GetChild(i).Find("Panel").GetComponent<Image>().fillAmount = orders[i].time / orders[i].timeMax;
+            canvasTransform.GetChild(i).Find("Panel").Find("Image").GetComponent<Image>().sprite = CrateUI.dict[orders[i].boxType];
+            canvasTransform.GetChild(i).Find("Panel").Find("OrderText").GetComponent<TextMeshProUGUI>().text = boxAmounts[orders[i].boxType].Count.ToString() + "/" + orders[i].amount.ToString();
         }
         for (; i < 3; i++)
         {
-            transform.GetChild(i).Find("Panel").gameObject.SetActive(false);
+            canvasTransform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
