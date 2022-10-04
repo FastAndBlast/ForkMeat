@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class CreditsManager : MonoBehaviour
     public float scrollSpeed;
 
     public float scrollLockPoint = 1000;
+
+    bool changed;
 
     // Update is called once per frame
     void Update()
@@ -21,10 +24,18 @@ public class CreditsManager : MonoBehaviour
         {
             transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
         }
-		else
+		else if (!changed)
 		{
-			SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            StartCoroutine(ChangeScene());
+            changed = true;
 		}
         //print(transform.localPosition.y);
+    }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        yield break;
     }
 }
